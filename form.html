@@ -12,11 +12,84 @@
   <main>
     <section class="hero">
       <h1>In welchen Formen treten KI-FakeNews auf?</h1>
-      <p> </p>
     </section>
 
-    <section class="topics">
-      <!-- Wozu content goes here -->
+    <section class="topics single-column">
+      <article>
+        <h2>Das zweischneidige Schwert: KI zwischen Fortschritt und Desinformation</h2>
+        <p>In einer Ära, in der Information als wichtigste globale Währung gilt, fungiert die Künstliche Intelligenz als zweischneidiges Schwert. Während sie in vielen Bereichen enorme Fortschritte ermöglicht, wird sie zunehmend effizienter eingesetzt, um die Grenzen zwischen Wahrheit und Fiktion systematisch zu verwischen. Die digitale Integrität gerät dabei durch verschiedene technologische Strategien massiv unter Druck.</p>
+      </article>
+
+      <article>
+        <h2>Die Automatisierung der Täuschung</h2>
+        <p>Der Einsatz von Large Language Models (LLMs) hat die Erstellung von Falschnachrichten revolutioniert. Was früher mühsame Handarbeit war, geschieht heute in Sekundenschnelle: KI generiert tausende Varianten einer Nachricht, um mittels Micro‑Targeting unterschiedliche Zielgruppen individuell anzusprechen. Dabei wird die Tendenz der KI zur „Halluzination“ – also das Erfinden von Fakten – gezielt missbraucht, um fiktive Belege und Zitate zu streuen. Ganze Netzwerke aus pseudojournalistischen Portalen, sogenannte „Pink Slime“-Websites, werden vollautomatisch mit diesen Inhalten geflutet, um Suchmaschinen‑Rankings zu manipulieren.</p>
+        <p>Verstärkt wird dieser Effekt durch KI‑gesteuerte Social‑Media‑Bots. Diese fungieren als digitale Multiplikatoren und simulieren durch koordinierte Interaktionen einen künstlichen Konsens. Da moderne Bots Sprachnuancen perfekt imitieren und zu unregelmäßigen Zeiten posten, sind sie von echten Nutzern kaum noch zu unterscheiden.</p>
+      </article>
+
+      <article>
+        <h2>Liar’s Dividend</h2>
+        <p>Diese Entwicklung führt zum sogenannten Liar’s Dividend. Weil heute jeder weiß, dass es Deepfakes gibt, verlieren digitale Beweise wie Videos oder Fotos an Glaubwürdigkeit. Das nutzen Personen der Öffentlichkeit aus: Wenn echte, aber belastende Aufnahmen von ihnen erscheinen, behaupten sie einfach, es handele sich um eine KI‑Fälschung. In dieser Atmosphäre des ständigen Zweifels entsteht eine paradoxe Situation: Lügen werden glaubwürdiger, während es für die Wahrheit immer schwieriger wird, überhaupt noch bewiesen zu werden.</p>
+      </article>
+
+      <article>
+        <h2>Deepfakes</h2>
+        <p>Die bei weitem gefährlichste Art der Verbreitung von Fehlinformationen sind die Deepfakes. Das sind mithilfe von Künstlicher Intelligenz manipulierte Videos, Bilder oder Audios, die echte Personen täuschend echt nachahmen. Sie können für Unterhaltung genutzt werden, bergen aber auch Risiken wie Desinformation oder Betrug. Der Face Swap ist die bei weitem bekannteste Art des Video‑ oder Foto‑Deepfakes. Der Prozess, ein Face Swap durchzuführen, etwa mit Software wie DeepFaceLab, folgt einer klaren Struktur: Nach der Extraktion der Gesichter aus Quell‑ und Zielvideo lernt die KI im Training, die Mimik des Originals auf das Ziel zu projizieren. In der abschließenden Konvertierung wird das neue Gesicht über das Original gelegt, wobei Masken‑Modifier wie „Erode“ oder „Blur“ genutzt werden, um harte Übergänge nahtlos zu verschmelzen.</p>
+      </article>
+
+      <article>
+        <h2>Wie viel Material ist nötig?</h2>
+        <p>Die Qualität einer Fälschung steht und fällt mit der Menge der zur Verfügung stehenden Daten. Während moderne „One‑Shot“ Modelle technisch bereits mit einem einzigen Foto ein Gesicht übertragen können, wirken diese Ergebnisse oft starr. Für einen professionellen Face‑Swap sind in der Regel zwischen 1.500 und 6.000 Einzelbilder der Zielperson nötig, um eine natürliche Mimik aus allen Winkeln zu garantieren.</p>
+        <p>Noch niedriger ist die Einstiegshürde bei Audio‑Deepfakes. Für ein einfaches Stimm‑Klonen reichen heute oft schon 3 bis 30 Sekunden einer sauberen Sprachaufnahme aus. Um jedoch eine wirklich flüssige, emotional glaubwürdige Stimme zu erzeugen, die von einer echten Person nicht mehr zu unterscheiden ist, wird meist Material von einer bis fünf Minuten Dauer verwendet.</p>
+      </article>
+
+      <article>
+        <h2>Eigene Deepfake‑Versuche</h2>
+        <p>Um die Theorie hinter der Desinformation besser zu verstehen und zu beschreiben, habe ich versucht, beim Testprojekt meine eigene Face‑Swap zu erstellen. Vorher habe ich noch nie praktische Erfahrungen in diesem Bereich, der Deepfakes, gesammelt. Dafür habe ich das Open‑Source‑Programm DeepFaceLab verwendet.</p>
+        <p>Trotz der mangelhaften Dokumentation von DeepFaceLab erleichterte mir ein kompaktes Tutorial den Einstieg. Es demonstrierte die grundlegenden Funktionen der Software sowie das integrierte Trainings‑Preset <em>Quick96</em>. Dieses Modell ermöglichte ein erstes Training der Gesichtsmerkmale bei einer Auflösung von 96×96 Pixeln.</p>
+        <p>Später arbeitete ich mich eigenständig in das komplexere <em>SAEHD</em>‑Preset ein. Damit gelang es mir, die Trainingsauflösung auf 128×128 Pixel zu steigern, was die Detailtiefe und Qualität der Ergebnisse im Vergleich zum Standardmodell spürbar verbesserte.</p>
+        <p>Für das tatsächliche „Deep Faken“ habe ich letztendlich zwei verschiedene Geräte mit folgender Hardware verwendet:</p>
+        <ul>
+          <li><strong>Setup 1:</strong>
+            <ul>
+              <li>Intel i9‑13900K @ 5500 MHz</li>
+              <li>NVIDIA RTX A2000 (12 GB)</li>
+              <li>32 GB DDR5 @ 6000 MHz CL30</li>
+            </ul>
+          </li>
+          <li><strong>Setup 2 (Legacy):</strong>
+            <ul>
+              <li>Intel i5‑6500 @ 3600 MHz</li>
+              <li>NVIDIA GeForce GTX 1080 (8 GB)</li>
+              <li>16 GB DDR4 @ 3200 MHz CL16</li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+
+      <article>
+        <h2>Unsere Deepfake‑Ergebnisse</h2>
+        <img class="content-img" src="erklaerung.jpg" alt="Erklärung">
+        <p>Vorab ist eine Erklärung des Trainingsinterfaces notwendig: Das Programm greift auf zwei Videos zu, das erste ist <code>data_src</code>, welches das Quellvideo ist, also aus dem das Gesicht extrahiert werden soll. Das zweite Video ist <code>data_dst</code>, also das Zielvideo, in welches das Gesicht eingesetzt werden soll. Das Quellvideo muss mehrere tausend Male an <code>data_dst</code> angepasst werden, um ein möglichst gutes Endergebnis zu erzielen; das nennt man Iterationen.</p>
+        <p><br>DF1 – Setup 1 – Quick96 – ~200000 Iterationen:</p>
+        <img class="content-img" src="trump.png" alt="Trump">
+        <p>DF2 – Setup 1 – Quick96 – ~10000 Iterationen:</p>
+        <img class="content-img" src="linus.png" alt="Nvidia">
+        <p>DF3 – Setup 1 – SAEHD (128×128 px) – ~25000 Iterationen:</p>
+        <img class="content-img" src="" alt="Erik">
+        <p>DF4 – Fehlversuch – Setup 2 – Quick96:</p>
+        <img class="content-img" src="fehlversuch.png" alt="Fehlversuch">
+        <p>DF5 – Setup 2 – SAEHD (128×128 px) – ~10000 Iterationen:</p>
+        <img class="content-img" src="elon.png" alt="Elon Musk and Iron Man">
+      </article>
+
+      <article>
+        <h2>Verwendetes Tutorial & Quellen</h2>
+        <p>Verwendetes Tutorial: <a href="https://www.youtube.com/watch?v=lSM-9RBk3HQ" target="_blank" rel="noopener">YouTube – DeepFaceLab Einführung</a></p>
+
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube-nocookie.com/embed/lSM-9RBk3HQ" title="DeepFaceLab Einführung" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </article>
     </section>
   </main>
 
